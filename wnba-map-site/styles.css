@@ -1,0 +1,1545 @@
+:root {
+    --ink: #17171a;
+    --muted: #76747a;
+    --paper: #f5f3ef;
+    --line: #d9d6d0;
+    --orange: #f25c3b;
+    --yellow: #f5c94a;
+    --lavender: #c7b9f3;
+    --navy: #252744
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif
+}
+
+.app-shell {
+    max-width: 1440px;
+    margin: auto;
+    overflow: hidden
+}
+
+.topbar {
+    height: 76px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 0 5.4%;
+    gap: 40px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-family: "Space Grotesk";
+    font-weight: 700;
+    letter-spacing: .08em;
+    font-size: 15px;
+    text-decoration: none
+}
+
+.brand em {
+    font-style: normal;
+    color: var(--orange)
+}
+
+.brand-mark {
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    font-size: 17px;
+    font-style: italic;
+    border-radius: 50%
+}
+
+.topnav {
+    display: flex;
+    gap: 32px;
+    margin-left: 54px;
+    height: 100%;
+    align-items: center
+}
+
+.topnav a {
+    font: 500 10px "DM Mono";
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: .08em;
+    position: relative
+}
+
+.topnav a.active,
+.topnav a:hover {
+    color: var(--ink)
+}
+
+.topnav a.active:after {
+    content: "";
+    height: 2px;
+    background: var(--orange);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px
+}
+
+.hero {
+    padding: 83px 9% 57px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative
+}
+
+.eyebrow {
+    font: 500 10px "DM Mono";
+    letter-spacing: .11em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 9px
+}
+
+.eyebrow span {
+    width: 7px;
+    height: 7px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: inline-block
+}
+
+.hero h1 {
+    grid-column: 1 / -1;
+    max-width: 1100px;
+    font: 600 clamp(56px, 7vw, 100px)/.91 "Space Grotesk";
+    letter-spacing: -.08em;
+    margin: 23px 0
+}
+
+.hero h1 i,
+.section-heading i {
+    font-style: normal;
+    color: var(--orange)
+}
+
+.hero-copy {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    align-self: end;
+    margin: 0 0 25px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #57555b
+}
+
+.hero-stats {
+    grid-column: 1;
+    display: flex;
+    gap: 43px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    width: max-content
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.hero-stats strong {
+    font: 500 24px "Space Grotesk"
+}
+
+.hero-stats span,
+.map-hint,
+.map-label {
+    font: 500 9px "DM Mono";
+    letter-spacing: .07em;
+    color: var(--muted)
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 1.7fr .8fr;
+    gap: 20px;
+    padding: 0 5.4%
+}
+
+.map-column {
+    min-width: 0
+}
+
+.map-card {
+    background: #ded9e3;
+    min-height: 505px
+}
+
+.map-filters {
+    display: flex;
+    gap: 10px;
+    padding: 0 0 14px;
+    background: transparent
+}
+
+.search-field {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: 1;
+    background: #f8f7f3;
+    border: 1px solid #c3cdce;
+    padding: 0 12px
+}
+
+.search-field span {
+    font-size: 22px;
+    line-height: 1;
+    color: #777
+}
+
+.search-field input {
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--ink);
+    font: 500 12px "DM Sans"
+}
+
+.search-field input::placeholder {
+    color: #8d8d8b
+}
+
+.conference-filters {
+    display: flex;
+    gap: 5px
+}
+
+.conference-button {
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid #b8c3c4;
+    background: transparent;
+    color: #536365;
+    font: 500 9px "DM Mono";
+    letter-spacing: .07em;
+    cursor: pointer
+}
+
+.conference-button:hover,
+.conference-button.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff
+}
+
+.map-toolbar {
+    height: 55px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.map-label {
+    color: var(--ink)
+}
+
+.live-dot {
+    display: inline-block;
+    background: var(--orange);
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    margin-right: 8px
+}
+
+.map-canvas {
+    position: relative;
+    height: 450px;
+    background: radial-gradient(circle at 51% 48%, #e7ecec 0, #d7e0e1 60%, #c9d5d7 100%);
+    overflow: hidden
+}
+
+#mapboxMap {
+    width: 100%;
+    height: 100%;
+    min-height: 484px;
+}
+
+#pins {
+    display: none;
+}
+
+.mapboxgl-map {
+    font-family: "DM Sans", sans-serif;
+}
+
+.mapboxgl-ctrl-group {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.mapboxgl-ctrl-group button {
+    width: 32px;
+    height: 32px;
+}
+
+.us-map {
+    position: absolute;
+    width: 89%;
+    height: 89%;
+    left: 5%;
+    top: 4%;
+    fill: #c0cecf;
+    stroke: #a3b4b6;
+    stroke-width: 3;
+    stroke-linejoin: round
+}
+
+.us-map .canada {
+    fill: #b2c3c5;
+    stroke: #96aaac;
+    stroke-width: 3
+}
+
+.state-lines {
+    fill: none;
+    stroke: #afc0c1;
+    stroke-width: 1.2
+}
+
+.pin {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    z-index: 2;
+    border: 0;
+    background: transparent;
+    padding: 0
+}
+
+.pin-shape {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--team-color, var(--orange));
+    border: 3px solid #fff;
+    overflow: hidden;
+    color: var(--ink);
+    box-shadow: 0 3px 8px #748b8d66;
+    font: 700 8px "DM Mono";
+    transition: transform .2s, box-shadow .2s
+}
+
+.pin-shape img {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    object-fit: contain;
+    display: block;
+    border-radius: 50% !important;
+}
+
+.pin:hover .pin-shape,
+.pin.selected .pin-shape {
+    transform: scale(1.18);
+    box-shadow: 0 0 0 6px #ffffff88, 0 4px 12px #52666888
+}
+
+.pin-shape::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 8px;
+    height: 8px;
+    background: var(--team-color, var(--orange));
+    clip-path: polygon(0 0, 100% 0, 50% 100%)
+}
+
+.pin-popup {
+    position: absolute;
+    bottom: 46px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    white-space: nowrap;
+    min-width: 145px;
+    padding: 9px 11px;
+    background: #fff;
+    border: 1px solid #d1d0ca;
+    box-shadow: 0 8px 18px #5063642b;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s, transform .2s
+}
+
+.pin-popup::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-right: 1px solid #d1d0ca;
+    border-bottom: 1px solid #d1d0ca;
+    transform: rotate(45deg)
+}
+
+.pin-popup strong,
+.pin-popup small {
+    display: block
+}
+
+.pin-popup strong {
+    color: var(--ink);
+    font: 600 11px "Space Grotesk"
+}
+
+.pin-popup small {
+    margin-top: 3px;
+    color: var(--muted);
+    font: 500 9px "DM Mono"
+}
+
+.pin:hover .pin-popup,
+.pin.selected .pin-popup {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0)
+}
+
+.map-legend {
+    position: absolute;
+    bottom: 20px;
+    left: 27px;
+    font: 500 9px "DM Mono";
+    letter-spacing: .06em;
+    color: #5f6f70
+}
+
+.legend-pin {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    margin-right: 7px
+}
+
+.team-panel {
+    background: var(--navy);
+    color: #f8f6f1;
+    padding: 31px 32px 29px;
+    min-height: 505px;
+    position: relative
+}
+
+.panel-kicker {
+    font: 500 9px "DM Mono";
+    color: #9898b1;
+    letter-spacing: .08em;
+    display: flex;
+    justify-content: space-between
+}
+
+.team-accent {
+    height: 5px;
+    width: 38px;
+    background: var(--yellow);
+    margin: 29px 0 21px
+}
+
+.team-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.team-logo {
+    background: var(--yellow);
+    color: var(--ink);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    font: 700 14px "Space Grotesk";
+    letter-spacing: -.05em
+}
+
+.team-logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.team-heading h2 {
+    font: 600 29px/.95 "Space Grotesk";
+    margin: 0;
+    letter-spacing: -.06em
+}
+
+.team-heading p {
+    color: #aaa9bd;
+    font-size: 12px;
+    margin: 8px 0 0
+}
+
+.team-divider {
+    border-top: 1px solid #41425c;
+    margin: 26px 0 19px
+}
+
+.team-description {
+    color: #c0bfd0;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 25px
+}
+
+.team-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px 10px
+}
+
+.team-details div:first-child {
+    grid-column: 1/-1
+}
+
+.team-details span {
+    display: block;
+    color: #8e8da5;
+    font: 500 8px "DM Mono";
+    letter-spacing: .08em;
+    margin-bottom: 5px
+}
+
+.team-details strong {
+    font: 500 12px "DM Sans"
+}
+
+.outline-button {
+    display: block;
+    margin-top: 28px;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #6b6a83;
+    background: none;
+    color: #f8f6f1;
+    font: 500 9px "DM Mono";
+    letter-spacing: .06em;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.outline-button span {
+    float: right;
+    color: var(--yellow);
+    font-size: 15px
+}
+
+.schedule-section {
+    padding: 108px 9% 88px
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px
+}
+
+.section-heading h2 {
+    font: 600 51px "Space Grotesk";
+    letter-spacing: -.07em;
+    margin: 17px 0 0
+}
+
+.month-navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.month-navigation strong {
+    font: 500 11px "DM Mono";
+    letter-spacing: .08em
+}
+
+.month-navigation button {
+    border: 0;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--muted)
+}
+
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 20px
+}
+
+.calendar-card,
+.games-panel {
+    border: 1px solid var(--line);
+    background: #faf9f6
+}
+
+.calendar-card {
+    padding: 22px
+}
+
+.weekdays,
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr)
+}
+
+.weekdays {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 13px
+}
+
+.weekdays span {
+    font: 500 9px "DM Mono";
+    color: var(--muted);
+    text-align: center
+}
+
+.calendar-grid {
+    gap: 5px;
+    margin-top: 9px
+}
+
+.day {
+    height: 60px;
+    border: 1px solid transparent;
+    background: none;
+    font: 500 13px "DM Sans";
+    cursor: pointer;
+    position: relative
+}
+
+.day:hover {
+    border-color: var(--orange)
+}
+
+.day.other {
+    color: #bdbbb7
+}
+
+.day.today {
+    background: var(--orange);
+    color: #fff
+}
+
+.day.selected {
+    border: 2px solid var(--ink)
+}
+
+.game-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: var(--orange);
+    bottom: 9px;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%)
+}
+
+.today .game-dot {
+    background: #fff
+}
+
+.games-panel {
+    padding: 27px 27px 20px
+}
+
+.games-date {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px
+}
+
+.calendar-icon {
+    font-size: 20px;
+    color: var(--orange)
+}
+
+.games-date span:not(.calendar-icon) {
+    font: 500 9px "DM Mono";
+    color: var(--muted);
+    letter-spacing: .06em
+}
+
+.games-date h3 {
+    font: 600 20px "Space Grotesk";
+    margin: 7px 0 0;
+    letter-spacing: -.04em
+}
+
+.game-row {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--line)
+}
+
+.game-badge {
+    width: 35px;
+    height: 35px;
+    background: var(--lavender);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font: 700 10px "Space Grotesk"
+}
+
+.game-row strong {
+    display: block;
+    font-size: 13px
+}
+
+.game-row small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 3px
+}
+
+.game-time {
+    margin-left: auto;
+    font: 500 10px "DM Mono";
+    color: var(--orange)
+}
+
+.no-games {
+    display: none;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 28px 0
+}
+
+.no-games.visible {
+    display: block
+}
+
+footer {
+    border-top: 1px solid var(--line);
+    padding: 25px 5.4%;
+    display: flex;
+    justify-content: space-between;
+    font: 500 9px "DM Mono";
+    color: var(--muted);
+    letter-spacing: .08em
+}
+
+@media(max-width:800px) {
+    .topbar {
+        padding: 0 5%;
+        gap: 15px
+    }
+
+    /* Screenshot-inspired map/profile composition */
+    .hero {
+        padding-top: 55px;
+        padding-bottom: 32px
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 5.5vw, 76px);
+        letter-spacing: -.07em
+    }
+
+    .hero-stats {
+        grid-column: 1 / -1;
+        width: 100%;
+        gap: 52px;
+        margin-top: 18px
+    }
+
+    .hero-stats strong {
+        font-size: 17px
+    }
+
+    .hero-stats span {
+        font-size: 8px
+    }
+
+    .map-layout {
+        grid-template-columns: minmax(0, 1.7fr) minmax(190px, .75fr);
+        gap: 9px;
+        padding-left: 9%;
+        padding-right: 9%;
+        align-items: stretch
+    }
+
+    .map-card,
+    .team-panel {
+        height: 480px;
+        min-height: 0
+    }
+
+    .map-filters {
+        padding-bottom: 14px;
+        gap: 18px
+    }
+
+    .search-field {
+        height: 30px;
+        border: 2px solid var(--ink);
+        background: #dededc;
+        padding: 0 10px
+    }
+
+    .search-field span {
+        display: none
+    }
+
+    .search-field input {
+        font: 500 10px "DM Mono";
+        text-transform: uppercase
+    }
+
+    .conference-filters {
+        gap: 18px
+    }
+
+    .conference-button {
+        height: 30px;
+        min-width: 80px;
+        border: 2px solid var(--ink);
+        background: #dededc;
+        color: var(--ink);
+        padding: 0 10px
+    }
+
+    .conference-button:hover,
+    .conference-button.active {
+        background: var(--orange);
+        border-color: var(--ink);
+        color: var(--ink)
+    }
+
+    .map-card {
+        border: 2px solid var(--ink);
+        background: #d9d9d9;
+        overflow: hidden
+    }
+
+    .map-toolbar {
+        height: 38px;
+        padding: 0 15px;
+        display: none
+    }
+
+    .map-canvas {
+        height: 480px;
+        background: #d9d9d9
+    }
+
+    .us-map {
+        width: 92%;
+        height: 92%;
+        left: 4%;
+        top: 1%;
+        fill: #d1d1d1;
+        stroke: #969696
+    }
+
+    .us-map .canada {
+        fill: #c8c8c8;
+        stroke: #969696
+    }
+
+    .state-lines {
+        stroke: #aaa;
+        opacity: .75
+    }
+
+    .map-legend {
+        bottom: 10px;
+        left: 14px;
+        color: #555;
+        font-size: 8px
+    }
+
+    .team-panel {
+        padding: 0;
+            background: var(--navy);
+            color: #f8f6f1;
+            border: 0;
+        overflow: hidden
+    }
+
+    .team-visual {
+            height: 118px;
+            display: block;
+            border: 0;
+            background: #30314e;
+            position: relative;
+            overflow: hidden
+        }
+
+    .team-visual img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center
+    }
+
+    .team-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(180deg, transparent 55%, #252744 100%)
+    }
+
+    .team-heading {
+        gap: 10px;
+        padding: 10px 12px 0
+    }
+
+    .team-logo {
+        width: 52px;
+        height: 52px;
+        background: var(--yellow) !important;
+        border: 0;
+        font-size: 12px
+    }
+
+    .team-heading h2 {
+        color: #f8f6f1;
+        font-size: 27px;
+        letter-spacing: -.06em
+    }
+
+    .team-heading p {
+        color: #aaa9bd;
+        font: 12px "DM Sans";
+        margin-top: 7px;
+        text-transform: none
+    }
+
+    .team-divider {
+        display: none
+    }
+
+    .team-description {
+        color: #c0bfd0;
+        font: 13px/1.5 "DM Sans";
+        padding: 0 12px;
+        margin: 18px 0 21px;
+        max-width: none;
+        text-transform: none
+    }
+
+    .team-details {
+        gap: 8px;
+        padding: 0 12px
+    }
+
+    .team-details div:first-child {
+        grid-column: auto
+    }
+
+    .team-details span {
+        color: #8e8da5;
+        font-size: 8px;
+        margin-bottom: 3px
+    }
+
+    .team-details strong {
+        display: block;
+        color: #f8f6f1;
+        font: 500 12px "DM Sans";
+        text-transform: none
+    }
+
+    .team-details small {
+        display: block;
+        margin-top: 4px;
+        color: #8e8da5;
+        font: 500 6px "DM Mono";
+        text-transform: uppercase
+    }
+
+    .outline-button {
+        margin: 24px 12px 0;
+        width: calc(100% - 24px);
+        padding: 7px;
+        border: 1px solid #6b6a83;
+        color: #f8f6f1;
+        font-size: 8px
+    }
+
+    .outline-button span {
+        color: var(--yellow);
+        font-size: 11px
+    }
+
+    @media(max-width:800px) {
+        .hero {
+            padding-top: 45px
+        }
+
+        .hero-stats {
+            gap: 20px;
+            justify-content: space-between
+        }
+
+        .map-layout {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding-left: 7%;
+            padding-right: 7%
+        }
+
+        .map-filters {
+            gap: 8px
+        }
+
+        .conference-filters {
+            gap: 8px
+        }
+
+        .map-card,
+        .map-canvas {
+            min-height: 350px;
+            height: 350px
+        }
+
+        .team-panel {
+            height: auto;
+            min-height: 300px
+        }
+    }
+
+    /* Keep the image inside the existing profile dimensions. */
+    @media(min-width:801px) {
+        .map-card,
+        .team-panel {
+            height: 541px;
+            min-height: 541px;
+        }
+
+        .map-canvas {
+            height: 484px;
+        }
+
+        .team-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-visual {
+            flex: 0 0 112px;
+            height: 112px;
+        }
+
+        .team-heading {
+            flex: 0 0 auto;
+            padding-top: 15px;
+        }
+
+        .team-divider {
+            margin-top: 16px;
+            margin-bottom: 13px;
+        }
+
+        .team-description {
+            margin-bottom: 17px;
+        }
+
+        .team-details {
+            gap: 13px 10px;
+        }
+
+        .outline-button {
+            margin-top: 20px;
+        }
+    }
+
+    /* Restore the original map/profile proportions while retaining the image header. */
+    .map-layout {
+        grid-template-columns: 1.7fr .8fr;
+        gap: 20px;
+        padding: 0 5.4%;
+    }
+
+    .map-card,
+    .team-panel {
+        height: 541px;
+        min-height: 541px;
+    }
+
+    .map-card {
+        border: 0;
+        background: #d9e1e3;
+        overflow: visible;
+    }
+
+    .map-filters {
+        gap: 10px;
+        padding: 0 0 14px;
+        background: transparent;
+    }
+
+    .search-field {
+        height: 42px;
+        border: 1px solid #c3cdce;
+        background: #f8f7f3;
+    }
+
+    .search-field span {
+        display: block;
+    }
+
+    .search-field input {
+        font: 500 12px "DM Sans";
+        text-transform: none;
+    }
+
+    .conference-filters {
+        gap: 5px;
+    }
+
+    .conference-button {
+        height: 42px;
+        min-width: 0;
+        border: 1px solid #b8c3c4;
+        background: transparent;
+        color: #536365;
+    }
+
+    .conference-button:hover,
+    .conference-button.active {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+    }
+
+    .map-toolbar {
+        height: 55px;
+        padding: 0 28px;
+        display: flex;
+    }
+
+    .map-canvas {
+        height: 484px;
+        min-height: 0;
+        background: radial-gradient(circle at 51% 48%, #e7ecec 0, #d7e0e1 60%, #c9d5d7 100%);
+    }
+
+    .us-map {
+        width: 89%;
+        height: 89%;
+        left: 5%;
+        top: 4%;
+        fill: #c0cecf;
+        stroke: #a3b4b6;
+    }
+
+    .us-map .canada {
+        fill: #b2c3c5;
+        stroke: #96aaac;
+    }
+
+    .state-lines {
+        stroke: #afc0c1;
+    }
+
+    .team-panel {
+        padding: 0;
+        background: var(--navy);
+        color: #f8f6f1;
+        border: 0;
+        overflow: hidden;
+    }
+
+    .team-visual {
+        height: 118px;
+    }
+
+    .team-heading {
+        gap: 16px;
+        padding: 20px 32px 0;
+    }
+
+    .team-logo {
+        width: 52px;
+        height: 52px;
+        background: var(--yellow) !important;
+        border: 0;
+        font-size: 14px;
+    }
+
+    .team-heading h2 {
+        color: #f8f6f1;
+        font-size: 29px;
+    }
+
+    .team-heading p {
+        color: #aaa9bd;
+        font: 12px "DM Sans";
+        margin-top: 8px;
+        text-transform: none;
+    }
+
+    .team-divider {
+        display: block;
+        border-top: 1px solid #41425c;
+        margin: 26px 32px 19px;
+    }
+
+    .team-description {
+        color: #c0bfd0;
+        font: 13px/1.5 "DM Sans";
+        padding: 0 32px;
+        margin: 0 0 25px;
+        max-width: none;
+        text-transform: none;
+    }
+
+    .team-details {
+        padding: 0 32px;
+        gap: 19px 10px;
+    }
+
+    .team-details div:first-child {
+        grid-column: 1/-1;
+    }
+
+    .team-details span {
+        color: #8e8da5;
+        font: 500 8px "DM Mono";
+    }
+
+    .team-details strong {
+        color: #f8f6f1;
+        font: 500 12px "DM Sans";
+    }
+
+    .team-details small {
+        color: #8e8da5;
+    }
+
+    .outline-button {
+        margin: 28px 32px 0;
+        width: calc(100% - 64px);
+        padding: 13px;
+        border: 1px solid #6b6a83;
+        color: #f8f6f1;
+    }
+
+    .outline-button span {
+        color: var(--yellow);
+    }
+
+    @media(max-width:800px) {
+        .map-layout {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 7%;
+        }
+
+        .map-card {
+            height: auto;
+            min-height: 425px;
+        }
+
+        .map-filters {
+            flex-direction: column;
+            padding: 0 0 12px;
+        }
+
+        .conference-filters {
+            width: 100%;
+            gap: 5px;
+        }
+
+        .conference-button {
+            flex: 1;
+        }
+
+        .map-toolbar {
+            height: 45px;
+            padding: 0 18px;
+        }
+
+        .map-canvas {
+            height: 370px;
+        }
+
+        .team-panel {
+            min-height: auto;
+        }
+
+        .team-heading {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .team-divider {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .team-description,
+        .team-details {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .outline-button {
+            margin-left: 20px;
+            width: calc(100% - 40px);
+        }
+    }
+
+    .topnav {
+        margin-left: auto;
+        gap: 15px
+    }
+
+    .topnav a:nth-child(3) {
+        display: none
+    }
+
+    .hero {
+        padding: 55px 7% 45px;
+        display: block
+    }
+
+    .hero h1 {
+        font-size: 65px
+    }
+
+    .hero-copy {
+        margin: 30px 0
+    }
+
+    .hero-stats {
+        width: 100%;
+        justify-content: space-between
+    }
+
+    .map-layout,
+    .calendar-layout {
+        grid-template-columns: 1fr
+    }
+
+    .map-card {
+        min-height: 425px
+    }
+
+    .map-filters {
+        flex-direction: column;
+        padding: 0 0 12px
+    }
+
+    .conference-filters {
+        width: 100%
+    }
+
+    .conference-button {
+        flex: 1
+    }
+
+    .map-canvas {
+        height: 370px
+    }
+
+    .team-panel {
+        min-height: auto
+    }
+
+    .schedule-section {
+        padding: 72px 7%
+    }
+
+    .section-heading {
+        display: block
+    }
+
+    .month-navigation {
+        margin-top: 25px;
+        justify-content: space-between
+    }
+
+    .calendar-card {
+        padding: 12px 7px
+    }
+
+    .day {
+        height: 49px
+    }
+
+    .games-panel {
+        min-height: 230px
+    }
+
+    footer {
+        padding: 22px 7%;
+        gap: 15px;
+        flex-wrap: wrap
+    }
+
+    footer span:nth-child(2) {
+        order: 3;
+        width: 100%
+    }
+}
+
+    @media (min-width: 801px) {
+        .hero h1 {
+            grid-column: 1 / -1;
+            max-width: 1100px;
+        }
+
+        .hero-copy {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 0 25px;
+            align-self: start;
+        }
+
+        .hero-stats {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (min-width: 801px) {
+        .map-layout {
+            grid-template-columns: 2.2fr .8fr;
+            align-items: stretch;
+        }
+
+        .map-filters {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
+        .map-card,
+        .team-panel {
+            height: 541px;
+            min-height: 541px;
+        }
+
+        .map-card {
+            overflow: hidden;
+        }
+
+        .map-canvas {
+            height: 484px;
+            min-height: 0;
+        }
+
+        .team-panel {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .team-visual {
+            flex: 0 0 112px;
+            height: 112px;
+            position: relative;
+            overflow: hidden;
+            background: #30314e;
+        }
+
+        .team-visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .team-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(180deg, transparent 55%, #252744 100%);
+        }
+
+        .team-heading {
+            flex: 0 0 auto;
+            padding: 15px 32px 0;
+        }
+
+        .team-divider {
+            margin: 16px 32px 13px;
+        }
+
+        .team-description {
+            padding: 0 32px;
+            margin: 0 0 17px;
+        }
+
+        .team-details {
+            padding: 0 32px;
+            gap: 13px 10px;
+        }
+
+        .outline-button {
+            margin: 20px 32px 0;
+            width: calc(100% - 64px);
+        }
+    }
+
+    @media (min-width: 801px) {
+        .hero h1 {
+            grid-column: 1 / -1;
+            max-width: 1100px;
+        }
+
+        .hero-copy {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 0 25px;
+            align-self: start;
+        }
+
+        .hero-stats {
+            grid-column: 1 / -1;
+        }
+    }

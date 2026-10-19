@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore WNBA teams by city across North America." />
+  <title>WNBA Atlas — Teams across America</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=team-box-logo" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">W</span>
+        <span>WNBA <em>ATLAS</em></span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a class="active" href="#map">EXPLORE MAP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="map">
+        <div class="eyebrow"><span></span> THE LEAGUE, AT A GLANCE</div>
+        <h1>Your start to learning about the <i>WNBA</i></h1>
+        <p class="hero-copy">Select a pin to discover and learn about the team located in that area, or search for a
+          specific team or city.</p>
+        <div class="hero-stats">
+          <div><strong>15</strong><span>TEAMS</span></div>
+          <div><strong>30</strong><span>YEARS</span></div>
+          <div><strong>LAS VEGAS ACES</strong><span>MOST RECENT CHAMPIONS</span></div>
+        </div>
+      </section>
+
+      <section class="map-layout">
+        <div class="map-filters" aria-label="Search and filter teams">
+          <label class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input id="teamSearch" type="search" placeholder="Search by city or team..."
+              aria-label="Search by city or team" />
+          </label>
+          <div class="conference-filters" role="group" aria-label="Filter by conference">
+            <button class="conference-button active" type="button" data-conference="all">ALL</button>
+            <button class="conference-button" type="button" data-conference="Eastern">EAST</button>
+            <button class="conference-button" type="button" data-conference="Western">WEST</button>
+          </div>
+        </div>
+        <div class="map-column">
+          <div class="map-card" aria-label="Interactive map of WNBA teams">
+            <div class="map-toolbar">
+              <span class="map-label"><span class="live-dot"></span> NORTH AMERICA</span>
+              <span class="map-hint">SELECT A PIN TO EXPLORE</span>
+            </div>
+            <div class="map-canvas" id="mapCanvas">
+              <div id="mapboxMap"></div>
+              <div id="pins"></div>
+
+              <div class="map-legend">
+                <span class="legend-pin"></span> WNBA TEAM CITY
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="team-panel" id="teamPanel">
+          <div class="team-visual" id="teamVisual">
+            <img id="teamImage" alt="" />
+          </div>
+          <div class="team-heading">
+            <div class="team-logo" id="teamLogo">NY</div>
+            <div>
+              <h2 id="teamName">New York<br />Liberty</h2>
+              <p id="teamLocation">Brooklyn, New York</p>
+            </div>
+          </div>
+          <div class="team-divider"></div>
+          <p class="team-description" id="teamDescription">The Liberty play with a fearless rhythm in the heart of
+            Brooklyn. A city team with a global point of view.</p>
+          <div class="team-details">
+            <div><span>PLACE</span><strong id="teamArena">Barclays Center</strong></div>
+            <div><span>YEAR FOUNDED</span><strong id="teamFounded">1997</strong></div>
+            <div><span>DIVISION</span><strong id="teamConference">Eastern</strong></div>
+          </div>
+          <a class="outline-button" id="teamLink" href="#" target="_blank" rel="noopener noreferrer">
+            VIEW TEAM WEBSITE <span>↗</span>
+          </a>
+        </aside>
+      </section>
+
+    </main>
+    <footer id="about"><span>WNBA ATLAS</span><span>BUILT FOR THE LOVE OF THE GAME</span><span>© 2026</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
