@@ -15,7 +15,7 @@ const teamLogos = {
   was: "images/washington-logo.png",
   dal: "images/dallas-logo.png",
   ct: "images/connecticut-logo.png",
-  sea2: "images/seattle-logo.png",
+  sea2: "images/gs-logo.png",
   tor: "images/to-logo.png",
   pdx: "images/phx-logo.png"
 };
